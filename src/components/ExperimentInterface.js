@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './ExperimentInterface.css';
 import ChatInterface from './ChatInterface';
 import ScenarioDecision from './ScenarioDecision';
+import Demographics from './Demographics';
 
 const TOTAL_TRIALS = 18;
 
 function ExperimentInterface({ stimuli, onComplete }) {
   const [currentTrial, setCurrentTrial] = useState(0);
-  const [stage, setStage] = useState('chat'); // 'chat', 'scenario'
+  const [stage, setStage] = useState('chat'); // 'chat', 'scenario', 'demographics'
   const [trialData, setTrialData] = useState([]);
   const [selectedStimuli, setSelectedStimuli] = useState([]);
   const [currentRating, setCurrentRating] = useState(null);
@@ -80,13 +81,23 @@ function ExperimentInterface({ stimuli, onComplete }) {
 
     setTrialData(updatedTrialData);
 
-    // Move to next trial or complete
+    // Move to next trial or show demographics
     if (currentTrial + 1 < TOTAL_TRIALS) {
       setCurrentTrial(currentTrial + 1);
       setStage('chat');
     } else {
-      onComplete(updatedTrialData);
+      setStage('demographics');
     }
+  };
+
+  const handleDemographicsComplete = (demographics) => {
+    // Combine trial data with demographics
+    const completeData = {
+      trials: trialData,
+      demographics: demographics,
+      completed_at: new Date().toISOString()
+    };
+    onComplete(completeData);
   };
 
   if (selectedStimuli.length === 0) {
@@ -102,17 +113,19 @@ function ExperimentInterface({ stimuli, onComplete }) {
 
   return (
     <div className="experiment-container">
-      <div className="progress-bar">
-        <div className="progress-info">
-          Trial {currentTrial + 1} of {TOTAL_TRIALS}
+      {stage !== 'demographics' && (
+        <div className="progress-bar">
+          <div className="progress-info">
+            Trial {currentTrial + 1} of {TOTAL_TRIALS}
+          </div>
+          <div className="progress-track">
+            <div
+              className="progress-fill"
+              style={{ width: `${((currentTrial + 1) / TOTAL_TRIALS) * 100}%` }}
+            ></div>
+          </div>
         </div>
-        <div className="progress-track">
-          <div
-            className="progress-fill"
-            style={{ width: `${((currentTrial + 1) / TOTAL_TRIALS) * 100}%` }}
-          ></div>
-        </div>
-      </div>
+      )}
 
       {stage === 'chat' && (
         <ChatInterface
@@ -128,6 +141,10 @@ function ExperimentInterface({ stimuli, onComplete }) {
           answer={currentStimulus.answer}
           onSubmit={handleScenarioSubmit}
         />
+      )}
+
+      {stage === 'demographics' && (
+        <Demographics onComplete={handleDemographicsComplete} />
       )}
     </div>
   );
