@@ -8,7 +8,8 @@ function Demographics({ onComplete }) {
     ai_usage_frequency: '',
     trust_in_ai: '',
     tech_savviness: '',
-    decision_style: ''
+    decision_style: '',
+    feedback: ''
   });
 
   const handleChange = (field, value) => {
@@ -19,8 +20,9 @@ function Demographics({ onComplete }) {
   };
 
   const handleSubmit = () => {
-    // Check if all fields are filled
-    const allFilled = Object.values(formData).every(value => value !== '');
+    // Check if all required fields are filled (feedback is optional)
+    const requiredFields = ['age', 'education', 'ai_usage_frequency', 'trust_in_ai', 'tech_savviness', 'decision_style'];
+    const allFilled = requiredFields.every(field => formData[field] !== '');
     if (!allFilled) {
       alert('Please answer all questions before continuing.');
       return;
@@ -172,6 +174,22 @@ function Demographics({ onComplete }) {
                 </label>
               ))}
             </div>
+          </div>
+
+          {/* Optional Feedback */}
+          <div className="demographic-question">
+            <label className="question-label">7. Additional Feedback or Ideas (Optional)</label>
+            <p className="question-description">
+              Feel free to share any thoughts, suggestions, or feedback about this experiment.
+            </p>
+            <textarea
+              className="feedback-textarea"
+              name="feedback"
+              value={formData.feedback}
+              onChange={(e) => handleChange('feedback', e.target.value)}
+              placeholder="Your feedback here..."
+              rows="4"
+            />
           </div>
 
           <button className="submit-demographics-button" onClick={handleSubmit}>
