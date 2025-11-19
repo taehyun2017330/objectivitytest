@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/objectivitytest/static/css/main.21e65e72.css",
+    "main.js": "/objectivitytest/static/js/main.9eef31ca.js",
+    "static/js/453.830b2510.chunk.js": "/objectivitytest/static/js/453.830b2510.chunk.js",
+    "index.html": "/objectivitytest/index.html",
+    "main.21e65e72.css.map": "/objectivitytest/static/css/main.21e65e72.css.map",
+    "main.9eef31ca.js.map": "/objectivitytest/static/js/main.9eef31ca.js.map",
+    "453.830b2510.chunk.js.map": "/objectivitytest/static/js/453.830b2510.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.21e65e72.css",
+    "static/js/main.9eef31ca.js"
+  ]
+}
