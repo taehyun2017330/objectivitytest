@@ -19,7 +19,7 @@ function WelcomePage({ onStart }) {
 
           <h3>What You Will Do:</h3>
           <ul>
-            <li>You will see <strong>18 trials</strong></li>
+            <li>You will see <strong>12 trials</strong></li>
             <li>Each trial shows a user question and an AI assistant's response</li>
             <li>You will <strong>judge how subjective</strong> you think the AI's answer is</li>
             <li>Then you'll see a <strong>fictional decision scenario</strong> based on that answer</li>

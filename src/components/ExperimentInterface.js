@@ -4,7 +4,7 @@ import ChatInterface from './ChatInterface';
 import ScenarioDecision from './ScenarioDecision';
 import Demographics from './Demographics';
 
-const TOTAL_TRIALS = 18;
+const TOTAL_TRIALS = 12;
 
 function ExperimentInterface({ stimuli, onComplete }) {
   const [currentTrial, setCurrentTrial] = useState(0);
