@@ -1,0 +1,152 @@
+.welcome-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.welcome-content {
+  max-width: 800px;
+  background: white;
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-content h1 {
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.welcome-content h2 {
+  color: #555;
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.welcome-content h3 {
+  color: #666;
+  font-size: 1.3em;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.instructions {
+  text-align: left;
+  line-height: 1.6;
+  color: #444;
+}
+
+.instructions p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.instructions ul {
+  margin-left: 24px;
+  margin-bottom: 20px;
+}
+
+.instructions li {
+  margin-bottom: 12px;
+  font-size: 1.05em;
+}
+
+.consent {
+  background: #f0f4f8;
+  border-left: 4px solid #667eea;
+  padding: 16px;
+  margin: 32px 0;
+  border-radius: 4px;
+}
+
+.consent p {
+  margin: 0;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.test-section {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.test-button {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: #6b7280;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 12px;
+}
+
+.test-button:hover:not(:disabled) {
+  background: #4b5563;
+  transform: translateY(-1px);
+}
+
+.test-button:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.test-result {
+  font-size: 14px;
+  margin: 12px 0 0 0;
+  padding: 12px;
+  border-radius: 6px;
+  line-height: 1.5;
+}
+
+.test-result.success {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+.test-result.error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+.test-loading {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 8px 0 0 0;
+}
+
+.start-button {
+  width: 100%;
+  padding: 16px 32px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 24px;
+}
+
+.start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+.start-button:active {
+  transform: translateY(0);
+}

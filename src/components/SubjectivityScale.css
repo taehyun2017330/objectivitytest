@@ -1,0 +1,148 @@
+.subjectivity-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.subjectivity-card {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.subjectivity-card h2 {
+  font-size: 28px;
+  color: #333;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.context-reminder {
+  background: #f7f7f8;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 32px;
+}
+
+.context-reminder p {
+  margin: 0 0 12px 0;
+  color: #555;
+  font-size: 15px;
+}
+
+.answer-box {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 12px;
+}
+
+.answer-box p {
+  margin: 8px 0 0 0;
+  line-height: 1.6;
+}
+
+.rating-section {
+  margin-bottom: 32px;
+}
+
+.rating-prompt {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.likert-scale {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.scale-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  min-width: 100px;
+  text-align: center;
+}
+
+.scale-buttons {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+
+.scale-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #d0d0d0;
+  background: white;
+  font-size: 16px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.scale-button:hover {
+  border-color: #667eea;
+  background: #f0f2ff;
+}
+
+.scale-button.selected {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+  transform: scale(1.1);
+}
+
+.scale-description {
+  background: #f0f4f8;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 14px;
+  color: #555;
+}
+
+.scale-description p {
+  margin: 8px 0;
+}
+
+.submit-rating-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: #667eea;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submit-rating-button:hover:not(:disabled) {
+  background: #5568d3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.submit-rating-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.submit-rating-button:active:not(:disabled) {
+  transform: translateY(0);
+}
